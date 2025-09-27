@@ -1,4 +1,4 @@
-import { Star, Users, Shield, Award } from "lucide-react";
+import { Award, Shield, Star, Users } from "lucide-react";
 
 const SocialProof = () => {
   const testimonials = [
@@ -47,7 +47,7 @@ const SocialProof = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-nature mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#139436] mb-4">
                 <stat.icon className="w-8 h-8 text-primary-foreground" />
               </div>
               <div className="text-3xl font-bold text-foreground mb-2">{stat.value}</div>
@@ -59,7 +59,7 @@ const SocialProof = () => {
         {/* Testimonials */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-            Trusted by <span className="bg-gradient-nature bg-clip-text text-transparent">Thousands</span>
+            Trusted by <span className="text-[#139436]">Thousands</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -79,7 +79,7 @@ const SocialProof = () => {
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-earth flex items-center justify-center text-accent-foreground font-semibold">
+                  <div className="w-10 h-10 rounded-full bg-[#139436]/20 flex items-center justify-center text-accent-foreground font-semibold">
                     {testimonial.avatar}
                   </div>
                   <div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { QrCode, BookOpen, Brain, ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, QrCode } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FeatureGateways = () => {
   const features = [
@@ -8,8 +9,9 @@ const FeatureGateways = () => {
       title: "Consumer Portal",
       description: "Scan QR codes to instantly verify product authenticity and trace the complete supply chain journey.",
       cta: "Verify Products",
-      variant: "wisdom" as const,
-      gradient: "bg-gradient-wisdom"
+      variant: "trust" as const,
+      gradient: "bg-[#139436]",
+      href: "/verify"
     },
     {
       icon: BookOpen,
@@ -17,24 +19,26 @@ const FeatureGateways = () => {
       description: "Comprehensive encyclopedia of Ayurvedic herbs, their benefits, sustainable sources, and traditional uses.",
       cta: "Explore Herbs",
       variant: "trust" as const,
-      gradient: "bg-gradient-trust"
+      gradient: "bg-[#139436]",
+      href: "/herb-portal"
     },
     {
       icon: Brain,
       title: "AI Assistant",
       description: "Get personalized herb recommendations, traditional recipes, and health guidance powered by AI.",
       cta: "Ask AI",
-      variant: "heritage" as const,
-      gradient: "bg-gradient-heritage"
+      variant: "trust" as const,
+      gradient: "bg-[#139436]",
+      href: "/ai-assistant"
     }
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="herbs" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-wisdom font-bold text-foreground mb-6">
-            Explore <span className="bg-gradient-wisdom bg-clip-text text-transparent">Ayurchain</span>
+            Explore <span className="text-[#139436]">Ayurchain</span>
           </h2>
           <p className="text-xl font-modern text-muted-foreground max-w-3xl mx-auto">
             Three powerful gateways to authentic Ayurvedic wisdom, each designed to serve your unique needs 
@@ -51,7 +55,7 @@ const FeatureGateways = () => {
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 ${feature.gradient} opacity-5 group-hover:opacity-10 transition-premium`}></div>
-              
+
               <div className="relative p-8">
                 {/* Icon */}
                 <div className="mb-6">
@@ -70,13 +74,13 @@ const FeatureGateways = () => {
                 </p>
 
                 {/* CTA */}
-                <Button 
-                  variant={feature.variant} 
-                  className="w-full group-hover:shadow-lg transition-premium"
+                <Link
+                  to={feature.href}
+                  className={`inline-flex items-center justify-center w-full group-hover:shadow-lg transition-premium h-10 px-4 py-2 text-sm font-medium rounded-md ${feature.variant === 'trust' ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'border border-input bg-background hover:bg-accent hover:text-accent-foreground'}`}
                 >
                   {feature.cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-premium" />
-                </Button>
+                </Link>
               </div>
 
               {/* Hover Effect Overlay */}

@@ -1,43 +1,48 @@
 import { Button } from "@/components/ui/button";
 import { Leaf, Menu, Search, User } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Herb Portal", href: "#herbs" },
-    { label: "For Farmers", href: "#farmers" },
-    { label: "For Brands", href: "#brands" },
-    { label: "About", href: "#about" }
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "Herb Portal", href: "/herb-portal" },
+    { label: "For Farmers", href: "/#farmers" },
+    { label: "For Brands", href: "/#brands" },
+    { label: "About", href: "/#about" },
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 w-full z-50 flex justify-center p-4">
+      <div className={`
+        w-full max-w-7xl mx-auto
+        rounded-full bg-background/80 backdrop-filter backdrop-blur-lg border border-border/50 shadow-lg
+      `}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-wisdom flex items-center justify-center">
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
               <Leaf className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
               <h1 className="text-xl font-wisdom font-bold text-foreground">Ayurchain</h1>
               <p className="text-xs font-modern text-muted-foreground hidden sm:block">Trust, Verified</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="text-sm font-modern font-medium text-muted-foreground hover:text-foreground transition-smooth"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -72,14 +77,14 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="text-sm font-modern font-medium text-muted-foreground hover:text-foreground transition-smooth py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
                 <Button variant="outline" size="sm">
@@ -93,6 +98,7 @@ const Header = () => {
             </nav>
           </div>
         )}
+      </div>
       </div>
     </header>
   );

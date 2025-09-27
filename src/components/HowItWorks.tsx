@@ -1,5 +1,5 @@
-import { MapPin, Shield, QrCode, Eye } from "lucide-react";
 import processImage from "@/assets/process-icons.jpg";
+import { Eye, MapPin, QrCode, Shield } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
@@ -30,11 +30,11 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted/30">
+    <section id="how-it-works" className="py-20 bg-gradient-to-br from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-wisdom font-bold text-foreground mb-6">
-            How <span className="bg-gradient-wisdom bg-clip-text text-transparent">Ayurchain</span> Works
+            How <span className="text-[#139436]">Ayurchain</span> Works
           </h2>
           <p className="text-xl font-modern text-muted-foreground max-w-3xl mx-auto">
             Our revolutionary system combines traditional Ayurvedic wisdom with cutting-edge blockchain technology 
@@ -60,7 +60,7 @@ const HowItWorks = () => {
               style={{ animationDelay: `${400 + index * 150}ms` }}
             >
               <div className="text-center">
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-heritage mb-6 group-hover:shadow-trust transition-premium group-hover:animate-pulse-soft`}>
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#139436]/10 mb-6 group-hover:shadow-trust transition-premium group-hover:animate-pulse-soft`}>
                   <step.icon className={`w-8 h-8 ${step.color} transition-premium group-hover:scale-110`} />
                 </div>
                 
@@ -79,13 +79,6 @@ const HowItWorks = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Connection Lines for Desktop */}
-        <div className="hidden lg:block relative -mt-16 mb-8">
-          <div className="absolute top-8 left-1/4 w-1/4 h-0.5 bg-gradient-wisdom"></div>
-          <div className="absolute top-8 left-1/2 w-1/4 h-0.5 bg-gradient-trust"></div>
-          <div className="absolute top-8 left-3/4 w-1/4 h-0.5 bg-gradient-heritage"></div>
         </div>
       </div>
     </section>

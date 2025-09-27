@@ -1,28 +1,29 @@
-import { Leaf, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Facebook, Instagram, Leaf, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
-    { label: "About Us", href: "#about" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Herb Portal", href: "#herbs" },
-    { label: "Contact", href: "#contact" },
-    { label: "Support", href: "#support" }
+    { label: "About Us", href: "/#about" },
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "Herb Portal", href: "/herb-portal" },
+    { label: "Contact", href: "/#contact" },
+    { label: "Support", href: "/#support" }
   ];
 
   const forStakeholders = [
-    { label: "For Farmers", href: "#farmers" },
-    { label: "For Brands", href: "#brands" },
-    { label: "For Retailers", href: "#retailers" },
-    { label: "For Labs", href: "#labs" },
-    { label: "Partnership Program", href: "#partners" }
+    { label: "For Farmers", href: "/#farmers" },
+    { label: "For Brands", href: "/#brands" },
+    { label: "For Retailers", href: "/#retailers" },
+    { label: "For Labs", href: "/#labs" },
+    { label: "Partnership Program", href: "/#partners" }
   ];
 
   const legal = [
-    { label: "Privacy Policy", href: "#privacy" },
-    { label: "Terms of Service", href: "#terms" },
-    { label: "Cookie Policy", href: "#cookies" },
-    { label: "Data Security", href: "#security" }
+    { label: "Privacy Policy", href: "/#privacy" },
+    { label: "Terms of Service", href: "/#terms" },
+    { label: "Cookie Policy", href: "/#cookies" },
+    { label: "Data Security", href: "/#security" }
   ];
 
   const socialLinks = [
@@ -77,12 +78,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.href} 
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -94,12 +95,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {forStakeholders.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.href} 
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -127,12 +128,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {legal.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.href} 
                     className="text-primary-foreground/70 hover:text-primary-foreground transition-smooth text-xs"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
