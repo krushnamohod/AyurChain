@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-wisdom transition-smooth font-modern",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-wisdom transition-premium font-modern premium-button",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 font-modern",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        wisdom: "bg-gradient-wisdom text-primary-foreground hover:shadow-heritage transform hover:scale-105 transition-bounce font-wisdom font-semibold",
-        trust: "bg-gradient-trust text-neural-gold-foreground hover:shadow-trust transform hover:scale-105 transition-bounce font-modern font-semibold",
-        heritage: "bg-gradient-heritage text-accent-foreground hover:shadow-heritage transition-smooth font-modern",
-        innovation: "bg-gradient-innovation text-primary-foreground hover:shadow-trust transform hover:scale-105 transition-bounce font-modern font-bold",
-        glass: "bg-background/80 backdrop-blur-sm border border-primary/20 text-foreground hover:bg-background/90 transition-smooth trust-highlight",
+        wisdom: "bg-gradient-wisdom text-primary-foreground shadow-wisdom font-wisdom font-semibold premium-button relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700",
+        trust: "bg-gradient-trust text-neural-gold-foreground shadow-trust font-modern font-semibold premium-button relative overflow-hidden group",
+        heritage: "bg-gradient-heritage text-accent-foreground shadow-heritage transition-premium font-modern hover:shadow-wisdom",
+        innovation: "bg-gradient-innovation text-primary-foreground shadow-trust font-modern font-bold premium-button relative overflow-hidden",
+        glass: "bg-background/80 backdrop-blur-sm border border-primary/20 text-foreground hover:bg-background/90 transition-premium trust-highlight glow-focus",
       },
       size: {
         default: "h-10 px-4 py-2",

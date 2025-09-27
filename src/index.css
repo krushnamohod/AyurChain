@@ -65,9 +65,11 @@ All colors MUST be HSL.
     --shadow-heritage: 0 6px 24px -6px hsl(20 25% 45% / 0.2);
     --shadow-card: 0 4px 20px -4px hsl(20 25% 20% / 0.1);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Premium Animations & Timing */
+    --transition-premium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-lift: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-glow: all 0.25s ease-in-out;
+    --spring-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -165,9 +167,45 @@ All colors MUST be HSL.
     @apply relative;
   }
 
-  .trust-highlight::before {
-    content: '';
-    @apply absolute inset-0 opacity-5;
-    background-image: var(--pattern-circuit);
+  /* Premium Interactive Elements */
+  .premium-button {
+    @apply relative overflow-hidden;
+    box-shadow: 0 4px 14px -4px hsl(var(--primary) / 0.25), 
+                0 2px 8px -2px hsl(var(--primary) / 0.15);
+    transition: var(--transition-premium);
+  }
+
+  .premium-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.35), 
+                0 4px 12px -2px hsl(var(--primary) / 0.25);
+  }
+
+  .premium-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px -2px hsl(var(--primary) / 0.25),
+                inset 0 2px 4px 0 hsl(var(--primary) / 0.2);
+  }
+
+  .glow-focus {
+    @apply relative;
+    transition: var(--transition-glow);
+  }
+
+  .glow-focus:focus-within {
+    box-shadow: 0 0 0 3px hsl(var(--tech-blue) / 0.2),
+                0 0 20px 0 hsl(var(--tech-blue) / 0.1);
+  }
+
+  .card-lift {
+    @apply transition-all duration-300;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-8px) rotateX(2deg) rotateY(1deg);
+    box-shadow: 0 20px 40px -12px hsl(var(--foreground) / 0.15),
+                0 8px 24px -8px hsl(var(--foreground) / 0.1);
   }
 }

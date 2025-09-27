@@ -25,7 +25,7 @@ const HeroSection = () => {
           </div>
           
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-wisdom font-bold text-primary-foreground mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-wisdom font-bold text-primary-foreground mb-6 animate-slide-in-hero">
             Trust, Verified
             <br />
             <span className="bg-gradient-heritage bg-clip-text text-transparent">
@@ -34,32 +34,34 @@ const HeroSection = () => {
           </h1>
           
           {/* Sub-headline */}
-          <p className="text-xl md:text-2xl font-modern text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl font-modern text-primary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
             End-to-end transparency in Ayurvedic supply chains. From geo-tagged harvesting to your hands, 
             preventing adulteration and ensuring authentic quality.
           </p>
           
           {/* Search Bar */}
-          <div className="bg-background/95 backdrop-blur-sm rounded-2xl p-6 shadow-tech mb-8 max-w-2xl mx-auto">
-            <div className="flex items-center gap-4 bg-muted rounded-xl p-4">
-              <Search className="w-6 h-6 text-muted-foreground" />
-              <input 
-                type="text" 
-                placeholder="Search for herbs or products (e.g., 'Ashwagandha Capsules', 'Tulsi')"
-                className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground text-lg"
-              />
-              <Button variant="trust" size="lg">
-                <Leaf className="w-5 h-5" />
-                Trace Now
-              </Button>
+          <div className="bg-background/95 backdrop-blur-sm rounded-2xl p-6 shadow-trust mb-8 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
+            <div className="relative glow-focus rounded-xl">
+              <div className="flex items-center gap-4 bg-muted rounded-xl p-4 group">
+                <Search className="w-6 h-6 text-muted-foreground group-focus-within:text-tech-blue transition-premium" />
+                <input 
+                  type="text" 
+                  placeholder="Search for herbs or products (e.g., 'Ashwagandha Capsules', 'Tulsi')"
+                  className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground text-lg font-modern focus:placeholder:text-muted-foreground/60 transition-premium"
+                />
+                <Button variant="trust" size="lg" className="shrink-0">
+                  <Leaf className="w-5 h-5" />
+                  Trace Now
+                </Button>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground mt-3 text-center">
+            <p className="text-sm font-modern text-muted-foreground mt-3 text-center">
               Search by product name, herb type, or scan QR codes for instant verification
             </p>
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up [animation-delay:600ms] opacity-0 [animation-fill-mode:forwards]">
             <Button variant="wisdom" size="lg" className="text-lg px-8 py-4">
               Explore How It Works
             </Button>

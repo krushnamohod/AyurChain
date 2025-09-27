@@ -46,35 +46,36 @@ const FeatureGateways = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-3xl wisdom-card hover:shadow-wisdom transition-smooth"
+              className={`group relative overflow-hidden rounded-3xl wisdom-card hover:shadow-wisdom transition-premium card-lift animate-fade-in-up opacity-0 [animation-fill-mode:forwards]`}
+              style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Background Gradient */}
-              <div className={`absolute inset-0 ${feature.gradient} opacity-5 group-hover:opacity-10 transition-smooth`}></div>
+              <div className={`absolute inset-0 ${feature.gradient} opacity-5 group-hover:opacity-10 transition-premium`}></div>
               
               <div className="relative p-8">
                 {/* Icon */}
                 <div className="mb-6">
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${feature.gradient} group-hover:shadow-trust transition-smooth`}>
-                    <feature.icon className="w-10 h-10 text-primary-foreground" />
+                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${feature.gradient} group-hover:shadow-trust transition-premium group-hover:animate-glow`}>
+                    <feature.icon className="w-10 h-10 text-primary-foreground transition-premium group-hover:scale-110 group-hover:rotate-3" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-wisdom font-bold text-card-foreground mb-4 group-hover:text-primary transition-smooth">
+                <h3 className="text-2xl font-wisdom font-bold text-card-foreground mb-4 group-hover:text-primary transition-premium">
                   {feature.title}
                 </h3>
                 
-                <p className="font-modern text-muted-foreground leading-relaxed mb-8">
+                <p className="font-modern text-muted-foreground leading-relaxed mb-8 group-hover:text-foreground transition-premium">
                   {feature.description}
                 </p>
 
                 {/* CTA */}
                 <Button 
                   variant={feature.variant} 
-                  className="w-full group-hover:shadow-lg transition-smooth"
+                  className="w-full group-hover:shadow-lg transition-premium"
                 >
                   {feature.cta}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-smooth" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-premium" />
                 </Button>
               </div>
 
