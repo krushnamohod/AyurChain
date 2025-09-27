@@ -31,6 +31,10 @@ export default {
           DEFAULT: "hsl(var(--tech-blue))",
           foreground: "hsl(var(--tech-blue-foreground))",
         },
+        "neural-gold": {
+          DEFAULT: "hsl(var(--neural-gold))",
+          foreground: "hsl(var(--neural-gold-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -68,15 +72,20 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "gradient-nature": "var(--gradient-nature)",
-        "gradient-earth": "var(--gradient-earth)",
-        "gradient-tech": "var(--gradient-tech)",
-        "gradient-hero": "var(--gradient-hero)",
+        "gradient-wisdom": "var(--gradient-wisdom)",
+        "gradient-trust": "var(--gradient-trust)",
+        "gradient-heritage": "var(--gradient-heritage)",
+        "gradient-innovation": "var(--gradient-innovation)",
       },
       boxShadow: {
-        "nature": "var(--shadow-nature)",
-        "tech": "var(--shadow-tech)",
+        "wisdom": "var(--shadow-wisdom)",
+        "trust": "var(--shadow-trust)",
+        "heritage": "var(--shadow-heritage)",
         "card": "var(--shadow-card)",
+      },
+      fontFamily: {
+        'wisdom': ['Playfair Display', 'serif'],
+        'modern': ['Inter', 'sans-serif'],
       },
       transitionTimingFunction: {
         "smooth": "var(--transition-smooth)",

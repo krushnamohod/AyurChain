@@ -33,10 +33,10 @@ const HowItWorks = () => {
     <section className="py-20 bg-gradient-to-br from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            How <span className="bg-gradient-nature bg-clip-text text-transparent">Ayurchain</span> Works
+          <h2 className="text-4xl md:text-5xl font-wisdom font-bold text-foreground mb-6">
+            How <span className="bg-gradient-wisdom bg-clip-text text-transparent">Ayurchain</span> Works
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl font-modern text-muted-foreground max-w-3xl mx-auto">
             Our revolutionary system combines traditional Ayurvedic wisdom with cutting-edge blockchain technology 
             to ensure every herb's journey is transparent and verifiable.
           </p>
@@ -56,23 +56,23 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className="bg-card rounded-2xl p-8 shadow-card hover:shadow-nature transition-smooth group hover:transform hover:scale-105"
+              className="wisdom-card rounded-2xl p-8 hover:shadow-wisdom transition-smooth group hover:transform hover:scale-105"
             >
               <div className="text-center">
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-muted to-secondary mb-6 group-hover:shadow-tech transition-smooth`}>
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-heritage mb-6 group-hover:shadow-trust transition-smooth`}>
                   <step.icon className={`w-8 h-8 ${step.color}`} />
                 </div>
                 
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-3">
+                  <span className="inline-block px-3 py-1 bg-tech-blue/10 text-tech-blue text-sm font-modern font-medium rounded-full mb-3">
                     Step {index + 1}
                   </span>
-                  <h3 className="text-xl font-bold text-card-foreground">
+                  <h3 className="text-xl font-wisdom font-bold text-card-foreground">
                     {step.title}
                   </h3>
                 </div>
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="font-modern text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -82,9 +82,9 @@ const HowItWorks = () => {
 
         {/* Connection Lines for Desktop */}
         <div className="hidden lg:block relative -mt-16 mb-8">
-          <div className="absolute top-8 left-1/4 w-1/4 h-0.5 bg-gradient-to-r from-primary to-tech-blue"></div>
-          <div className="absolute top-8 left-1/2 w-1/4 h-0.5 bg-gradient-to-r from-tech-blue to-accent"></div>
-          <div className="absolute top-8 left-3/4 w-1/4 h-0.5 bg-gradient-to-r from-accent to-primary"></div>
+          <div className="absolute top-8 left-1/4 w-1/4 h-0.5 bg-gradient-wisdom"></div>
+          <div className="absolute top-8 left-1/2 w-1/4 h-0.5 bg-gradient-trust"></div>
+          <div className="absolute top-8 left-3/4 w-1/4 h-0.5 bg-gradient-heritage"></div>
         </div>
       </div>
     </section>

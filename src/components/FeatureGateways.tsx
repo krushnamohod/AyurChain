@@ -8,24 +8,24 @@ const FeatureGateways = () => {
       title: "Consumer Portal",
       description: "Scan QR codes to instantly verify product authenticity and trace the complete supply chain journey.",
       cta: "Verify Products",
-      variant: "hero" as const,
-      gradient: "bg-gradient-nature"
+      variant: "wisdom" as const,
+      gradient: "bg-gradient-wisdom"
     },
     {
       icon: BookOpen,
       title: "Herb Knowledge Portal",
       description: "Comprehensive encyclopedia of Ayurvedic herbs, their benefits, sustainable sources, and traditional uses.",
       cta: "Explore Herbs",
-      variant: "tech" as const,
-      gradient: "bg-gradient-tech"
+      variant: "trust" as const,
+      gradient: "bg-gradient-trust"
     },
     {
       icon: Brain,
       title: "AI Assistant",
       description: "Get personalized herb recommendations, traditional recipes, and health guidance powered by AI.",
       cta: "Ask AI",
-      variant: "earth" as const,
-      gradient: "bg-gradient-earth"
+      variant: "heritage" as const,
+      gradient: "bg-gradient-heritage"
     }
   ];
 
@@ -33,10 +33,10 @@ const FeatureGateways = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Explore <span className="bg-gradient-nature bg-clip-text text-transparent">Ayurchain</span>
+          <h2 className="text-4xl md:text-5xl font-wisdom font-bold text-foreground mb-6">
+            Explore <span className="bg-gradient-wisdom bg-clip-text text-transparent">Ayurchain</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl font-modern text-muted-foreground max-w-3xl mx-auto">
             Three powerful gateways to authentic Ayurvedic wisdom, each designed to serve your unique needs 
             in the journey toward natural wellness.
           </p>
@@ -46,7 +46,7 @@ const FeatureGateways = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-3xl bg-card shadow-card hover:shadow-nature transition-smooth"
+              className="group relative overflow-hidden rounded-3xl wisdom-card hover:shadow-wisdom transition-smooth"
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 ${feature.gradient} opacity-5 group-hover:opacity-10 transition-smooth`}></div>
@@ -54,17 +54,17 @@ const FeatureGateways = () => {
               <div className="relative p-8">
                 {/* Icon */}
                 <div className="mb-6">
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${feature.gradient} group-hover:shadow-tech transition-smooth`}>
+                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl ${feature.gradient} group-hover:shadow-trust transition-smooth`}>
                     <feature.icon className="w-10 h-10 text-primary-foreground" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-primary transition-smooth">
+                <h3 className="text-2xl font-wisdom font-bold text-card-foreground mb-4 group-hover:text-primary transition-smooth">
                   {feature.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <p className="font-modern text-muted-foreground leading-relaxed mb-8">
                   {feature.description}
                 </p>
 
@@ -88,10 +88,10 @@ const FeatureGateways = () => {
         <div className="text-center mt-16">
           <div className="inline-flex items-center gap-4 bg-muted/50 rounded-2xl p-6">
             <div className="text-left">
-              <h4 className="font-semibold text-foreground">Ready to get started?</h4>
-              <p className="text-sm text-muted-foreground">Join thousands who trust Ayurchain for authentic herbs</p>
+              <h4 className="font-wisdom font-semibold text-foreground">Ready to get started?</h4>
+              <p className="text-sm font-modern text-muted-foreground">Join thousands who trust Ayurchain for authentic herbs</p>
             </div>
-            <Button variant="hero" size="lg">
+            <Button variant="innovation" size="lg">
               Start Exploring
             </Button>
           </div>

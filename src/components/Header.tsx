@@ -19,12 +19,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-nature flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-wisdom flex items-center justify-center">
               <Leaf className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Ayurchain</h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">Trust, Verified</p>
+              <h1 className="text-xl font-wisdom font-bold text-foreground">Ayurchain</h1>
+              <p className="text-xs font-modern text-muted-foreground hidden sm:block">Trust, Verified</p>
             </div>
           </div>
 
@@ -34,7 +34,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                className="text-sm font-modern font-medium text-muted-foreground hover:text-foreground transition-smooth"
               >
                 {item.label}
               </a>
@@ -51,7 +51,7 @@ const Header = () => {
               <User className="w-4 h-4" />
               Sign In
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="trust" size="sm">
               Get Started
             </Button>
           </div>
@@ -75,7 +75,7 @@ const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-smooth py-2"
+                  className="text-sm font-modern font-medium text-muted-foreground hover:text-foreground transition-smooth py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -86,7 +86,7 @@ const Header = () => {
                   <User className="w-4 h-4" />
                   Sign In
                 </Button>
-                <Button variant="hero" size="sm">
+                <Button variant="trust" size="sm">
                   Get Started
                 </Button>
               </div>

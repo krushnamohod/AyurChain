@@ -8,35 +8,39 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Ayurchain Brand Colors - Nature + Technology */
-    --background: 40 8% 97%;
-    --foreground: 25 15% 15%;
+    /* Ancient Wisdom, Modern Trust - Refined Color System */
+    --background: 43 15% 96%;  /* Soft Parchment Beige */
+    --foreground: 20 25% 20%;  /* Rich Dark Brown */
 
-    --card: 40 12% 96%;
-    --card-foreground: 25 15% 15%;
+    --card: 43 18% 94%;  /* Warm Card Background */
+    --card-foreground: 20 25% 20%;
 
-    --popover: 40 12% 96%;
-    --popover-foreground: 25 15% 15%;
+    --popover: 43 18% 94%;
+    --popover-foreground: 20 25% 20%;
 
-    /* Primary: Deep Forest Green */
-    --primary: 140 35% 25%;
-    --primary-foreground: 40 8% 97%;
+    /* Primary: Deep Forest Green - Ancient Wisdom */
+    --primary: 140 40% 18%;  /* #2E462E - Deeper, richer green */
+    --primary-foreground: 43 15% 96%;
 
-    /* Secondary: Warm Earth */
-    --secondary: 25 25% 75%;
-    --secondary-foreground: 25 15% 15%;
+    /* Secondary: Warm Earthy Brown - Heritage */
+    --secondary: 20 25% 45%;  /* #6B4F4F - Warm earth tone */
+    --secondary-foreground: 43 15% 96%;
 
-    /* Tech Accent: Calm Blue */
-    --tech-blue: 210 45% 50%;
-    --tech-blue-foreground: 40 8% 97%;
+    /* Digital Trust Blue - Modern Technology */
+    --tech-blue: 210 70% 55%;  /* #4A90E2 - Vibrant trust blue */
+    --tech-blue-foreground: 43 15% 96%;
 
-    /* Muted: Sage Green */
-    --muted: 120 15% 85%;
-    --muted-foreground: 25 15% 45%;
+    /* Neural Gold - AI & Innovation */
+    --neural-gold: 51 100% 50%;  /* #FFD700 - Premium gold accent */
+    --neural-gold-foreground: 20 25% 20%;
 
-    /* Accent: Golden Earth */
-    --accent: 35 40% 70%;
-    --accent-foreground: 25 15% 15%;
+    /* Muted: Sage Wisdom */
+    --muted: 120 20% 88%;
+    --muted-foreground: 20 15% 50%;
+
+    /* Accent: Refined Earth */
+    --accent: 35 25% 75%;
+    --accent-foreground: 20 25% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -45,16 +49,21 @@ All colors MUST be HSL.
     --input: 120 15% 90%;
     --ring: 140 35% 25%;
 
-    /* Brand Gradients */
-    --gradient-nature: linear-gradient(135deg, hsl(140 35% 25%), hsl(120 30% 35%));
-    --gradient-earth: linear-gradient(135deg, hsl(35 40% 70%), hsl(25 35% 65%));
-    --gradient-tech: linear-gradient(135deg, hsl(210 45% 50%), hsl(220 40% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(140 35% 25%) 0%, hsl(120 30% 35%) 50%, hsl(35 40% 70%) 100%);
+    /* Hybrid Brand Gradients - Ancient Wisdom + Modern Trust */
+    --gradient-wisdom: linear-gradient(135deg, hsl(140 40% 18%), hsl(20 25% 45%));  /* Forest to Earth */
+    --gradient-trust: linear-gradient(135deg, hsl(210 70% 55%), hsl(51 100% 50%));  /* Tech Blue to Neural Gold */
+    --gradient-heritage: linear-gradient(135deg, hsl(20 25% 45%), hsl(35 25% 75%));  /* Earth tones */
+    --gradient-innovation: linear-gradient(135deg, hsl(140 40% 18%) 0%, hsl(210 70% 55%) 50%, hsl(51 100% 50%) 100%);  /* Nature to Tech */
+    
+    /* Organic Textures & Tech Overlays */
+    --texture-organic: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    --pattern-circuit: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M20 20.5V18H18v-2h2v-2h2v2h2v2h-2v2.5zM8 8h2v2H8V8zm0 4h2v2H8v-2zm4-4h2v2h-2V8zm0 4h2v2h-2v-2z'/%3E%3C/g%3E%3C/svg%3E");
 
-    /* Shadows */
-    --shadow-nature: 0 10px 30px -10px hsl(140 35% 25% / 0.2);
-    --shadow-tech: 0 8px 25px -8px hsl(210 45% 50% / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(25 15% 15% / 0.1);
+    /* Enhanced Shadows - Organic + Digital */
+    --shadow-wisdom: 0 12px 40px -12px hsl(140 40% 18% / 0.25);
+    --shadow-trust: 0 8px 32px -8px hsl(210 70% 55% / 0.3);
+    --shadow-heritage: 0 6px 24px -6px hsl(20 25% 45% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(20 25% 20% / 0.1);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -125,5 +134,40 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Typography Classes - Ancient Wisdom, Modern Trust */
+  .font-wisdom {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-modern {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Texture Classes */
+  .texture-organic {
+    background-image: var(--texture-organic);
+  }
+  
+  .pattern-circuit {
+    background-image: var(--pattern-circuit);
+  }
+
+  /* Hybrid Elements */
+  .wisdom-card {
+    @apply bg-card border border-primary/10 shadow-heritage;
+    background-image: var(--texture-organic);
+  }
+
+  .trust-highlight {
+    @apply relative;
+  }
+
+  .trust-highlight::before {
+    content: '';
+    @apply absolute inset-0 opacity-5;
+    background-image: var(--pattern-circuit);
   }
 }
