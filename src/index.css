@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ancient Wisdom, Modern Trust - Refined Color System */
+    --background: 43 15% 96%;  /* Soft Parchment Beige */
+    --foreground: 20 25% 20%;  /* Rich Dark Brown */
+
+    --card: 43 18% 94%;  /* Warm Card Background */
+    --card-foreground: 20 25% 20%;
+
+    --popover: 43 18% 94%;
+    --popover-foreground: 20 25% 20%;
+
+    /* Primary: Deep Forest Green - Ancient Wisdom */
+    --primary: 140 40% 18%;  /* #2E462E - Deeper, richer green */
+    --primary-foreground: 43 15% 96%;
+
+    /* Secondary: Warm Earthy Brown - Heritage */
+    --secondary: 20 25% 45%;  /* #6B4F4F - Warm earth tone */
+    --secondary-foreground: 43 15% 96%;
+
+    /* Digital Trust Blue - Modern Technology */
+    --tech-blue: 210 70% 55%;  /* #4A90E2 - Vibrant trust blue */
+    --tech-blue-foreground: 43 15% 96%;
+
+    /* Neural Gold - AI & Innovation */
+    --neural-gold: 51 100% 50%;  /* #FFD700 - Premium gold accent */
+    --neural-gold-foreground: 20 25% 20%;
+
+    /* Muted: Sage Wisdom */
+    --muted: 120 20% 88%;
+    --muted-foreground: 20 15% 50%;
+
+    /* Accent: Refined Earth */
+    --accent: 35 25% 75%;
+    --accent-foreground: 20 25% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 15% 85%;
+    --input: 120 15% 90%;
+    --ring: 140 35% 25%;
+
+    /* Hybrid Brand Gradients - Ancient Wisdom + Modern Trust */
+    --gradient-wisdom: linear-gradient(135deg, hsl(140 40% 18%), hsl(20 25% 45%));  /* Forest to Earth */
+    --gradient-trust: linear-gradient(135deg, hsl(210 70% 55%), hsl(51 100% 50%));  /* Tech Blue to Neural Gold */
+    --gradient-heritage: linear-gradient(135deg, hsl(20 25% 45%), hsl(35 25% 75%));  /* Earth tones */
+    --gradient-innovation: linear-gradient(135deg, hsl(140 40% 18%) 0%, hsl(210 70% 55%) 50%, hsl(51 100% 50%) 100%);  /* Nature to Tech */
+    
+    /* Organic Textures & Tech Overlays */
+    --texture-organic: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    --pattern-circuit: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M20 20.5V18H18v-2h2v-2h2v2h2v2h-2v2.5zM8 8h2v2H8V8zm0 4h2v2H8v-2zm4-4h2v2h-2V8zm0 4h2v2h-2v-2z'/%3E%3C/g%3E%3C/svg%3E");
+
+    /* Enhanced Shadows - Organic + Digital */
+    --shadow-wisdom: 0 12px 40px -12px hsl(140 40% 18% / 0.25);
+    --shadow-trust: 0 8px 32px -8px hsl(210 70% 55% / 0.3);
+    --shadow-heritage: 0 6px 24px -6px hsl(20 25% 45% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(20 25% 20% / 0.1);
+
+    /* Premium Animations & Timing */
+    --transition-premium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-lift: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-glow: all 0.25s ease-in-out;
+    --spring-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Typography Classes - Ancient Wisdom, Modern Trust */
+  .font-wisdom {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-modern {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Texture Classes */
+  .texture-organic {
+    background-image: var(--texture-organic);
+  }
+  
+  .pattern-circuit {
+    background-image: var(--pattern-circuit);
+  }
+
+  /* Hybrid Elements */
+  .wisdom-card {
+    @apply bg-card border border-primary/10 shadow-heritage;
+    background-image: var(--texture-organic);
+  }
+
+  .trust-highlight {
+    @apply relative;
+  }
+
+  /* Premium Interactive Elements */
+  .premium-button {
+    @apply relative overflow-hidden;
+    box-shadow: 0 4px 14px -4px hsl(var(--primary) / 0.25), 
+                0 2px 8px -2px hsl(var(--primary) / 0.15);
+    transition: var(--transition-premium);
+  }
+
+  .premium-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.35), 
+                0 4px 12px -2px hsl(var(--primary) / 0.25);
+  }
+
+  .premium-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px -2px hsl(var(--primary) / 0.25),
+                inset 0 2px 4px 0 hsl(var(--primary) / 0.2);
+  }
+
+  .glow-focus {
+    @apply relative;
+    transition: var(--transition-glow);
+  }
+
+  .glow-focus:focus-within {
+    box-shadow: 0 0 0 3px hsl(var(--tech-blue) / 0.2),
+                0 0 20px 0 hsl(var(--tech-blue) / 0.1);
+  }
+
+  .card-lift {
+    @apply transition-all duration-300;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-8px) rotateX(2deg) rotateY(1deg);
+    box-shadow: 0 20px 40px -12px hsl(var(--foreground) / 0.15),
+                0 8px 24px -8px hsl(var(--foreground) / 0.1);
+  }
+}
