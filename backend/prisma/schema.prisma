@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+//// ENUMS ////
+
+enum BatchStatus {
+  HARVESTED
+  PROCESSED
+  LAB_TESTED
+}
+
+enum LabResult {
+  PASS
+  FAIL
+}
+
+//// CORE MODELS ////
+
+model Herb {
+  id              Int          @id @default(autoincrement())
+  commonName      String
+  scientificName  String?
+  specialty       String?
+  region          String?
+  imageUrl        String?
+
+  batches         HerbBatch[]
+
+  createdAt       DateTime     @default(now())
+}
+
+model Farmer {
+  id         Int          @id @default(autoincrement())
+  name       String
+  mobile     String?
+  location   String?
+
+  batches    HerbBatch[]
+
+  createdAt  DateTime     @default(now())
+}
+
+model Processor {
+  id          Int                @id @default(autoincrement())
+  name        String
+  licenseNo  String?
+  location    String?
+
+  records     ProcessingRecord[]
+
+  createdAt   DateTime           @default(now())
+}
+
+model Lab {
+  id               Int          @id @default(autoincrement())
+  name             String
+  accreditationNo  String?
+  location         String?
+
+  reports          LabReport[]
+
+  createdAt        DateTime     @default(now())
+}
+
+//// TRACEABILITY MODELS ////
+
+model HerbBatch {
+  id              String        @id   // e.g. BATCH001
+  herbId          Int
+  farmerId        Int
+
+  geoLocation     String?
+  harvestDate     DateTime?
+  quantity        String?
+
+  status          BatchStatus   @default(HARVESTED)
+
+  blockchainTxId  String?
+  qrCodeUrl       String?
+
+  herb            Herb          @relation(fields: [herbId], references: [id])
+  farmer          Farmer        @relation(fields: [farmerId], references: [id])
+
+  processing      ProcessingRecord[]
+  labReports      LabReport[]
+
+  createdAt       DateTime      @default(now())
+}
+
+model ProcessingRecord {
+  id              Int          @id @default(autoincrement())
+  batchId         String
+  processorId     Int
+
+  method          String?
+  processDate     DateTime?
+
+  blockchainTxId  String?
+
+  batch           HerbBatch    @relation(fields: [batchId], references: [id])
+  processor       Processor    @relation(fields: [processorId], references: [id])
+
+  createdAt       DateTime     @default(now())
+}
+
+model LabReport {
+  id              Int          @id @default(autoincrement())
+  batchId         String
+  labId           Int
+
+  testDate        DateTime?
+  result          LabResult
+  reportHash      String?      // IPFS hash or file hash
+
+  blockchainTxId  String?
+
+  batch           HerbBatch    @relation(fields: [batchId], references: [id])
+  lab             Lab          @relation(fields: [labId], references: [id])
+
+  createdAt       DateTime     @default(now())
+}
