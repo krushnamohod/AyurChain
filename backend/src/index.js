@@ -54,7 +54,7 @@ app.use((req, res) => {
 (async () => {
     try {
         initGunDB();
-        app.listen(PORT, () => {
+        app.listen(PORT, "0.0.0.0", () => {
             console.log(`🌿 AyurChain API server running on http://localhost:${PORT}`);
         });
     } catch (error) {

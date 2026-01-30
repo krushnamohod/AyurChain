@@ -150,6 +150,25 @@ router.get("/:batchId", async (req, res, next) => {
         const latestLabReport = batch.labReports[batch.labReports.length - 1];
         const labResult = latestLabReport ? latestLabReport.result : null;
 
+        // Fetch ingredients for multi-ingredient products (e.g., Facial Toner)
+        // Ingredient herbs are stored with IDs 10-14
+        let ingredients = [];
+        if (batch.id === "VRITI-TONER-001") {
+            ingredients = await prisma.herb.findMany({
+                where: {
+                    id: { in: [10, 11, 12, 13, 14] },
+                },
+                select: {
+                    id: true,
+                    commonName: true,
+                    scientificName: true,
+                    specialty: true,
+                    region: true,
+                    imageUrl: true,
+                },
+            });
+        }
+
         const response = {
             verified: true,
             batchId: batch.id,
@@ -157,6 +176,7 @@ router.get("/:batchId", async (req, res, next) => {
             labResult,
             qrCodeUrl: batch.qrCodeUrl,
             herb: batch.herb,
+            ingredients, // Array of ingredient herbs for products
             origin: {
                 farmer: batch.farmer.name,
                 location: batch.farmer.location || batch.geoLocation,
@@ -165,6 +185,7 @@ router.get("/:batchId", async (req, res, next) => {
             },
             timeline,
             blockchainVerifications,
+            labReports: batch.labReports, // Include full lab reports
             verifiedAt: new Date().toISOString(),
         };
 
