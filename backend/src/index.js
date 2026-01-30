@@ -1,5 +1,6 @@
 require("dotenv").config();
 const prisma = require("./lib/prismaClient");
+const { initGunDB } = require("./lib/gundb");
 const express = require("express");
 const cors = require("cors");
 
@@ -11,6 +12,7 @@ const labsRouter = require("./routes/labs");
 const batchesRouter = require("./routes/batches");
 const verifyRouter = require("./routes/verify");
 const qrRouter = require("./routes/qr");
+const adminRouter = require("./routes/admin");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -32,6 +34,7 @@ app.use("/api/labs", labsRouter);
 app.use("/api/batches", batchesRouter);
 app.use("/api/verify", verifyRouter);
 app.use("/api/qr", qrRouter);
+app.use("/api/admin", adminRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -48,13 +51,21 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-    console.log(`🌿 AyurChain API server running on http://localhost:${PORT}`);
-});
+(async () => {
+    try {
+        initGunDB();
+        app.listen(PORT, () => {
+            console.log(`🌿 AyurChain API server running on http://localhost:${PORT}`);
+        });
+    } catch (error) {
+        console.error("Failed to start server:", error);
+        process.exit(1);
+    }
+})();
 
 // Graceful shutdown
 process.on("SIGTERM", async () => {
-    console.log("SIGTERM received. Closing database connection...");
+    console.log("SIGTERM received. Closing connections...");
     await prisma.$disconnect();
     process.exit(0);
 });

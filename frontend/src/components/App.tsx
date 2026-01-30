@@ -5,6 +5,7 @@ import AIAssistantPage from "../pages/AIAssistantPage";
 import HerbPortal from "../pages/HerbPortal";
 import LandingPage from "../pages/LandingPage";
 import NotFound from "../pages/NotFound";
+import VerifyPage from "../pages/VerifyPage";
 import RootLayout from "./RootLayout";
 
 const router = createBrowserRouter([
@@ -21,11 +22,18 @@ const router = createBrowserRouter([
         path: "herb-portal",
         element: <HerbPortal />,
       },
-      // You can add other top-level pages here in the future
-      // {
-      //   path: "about",
-      //   element: <AboutPage />,
-      // },
+      {
+        path: "herb-portal/:herbName",
+        element: <HerbPortal />,
+      },
+      {
+        path: "verify",
+        element: <VerifyPage />,
+      },
+      {
+        path: "verify/:batchId",
+        element: <VerifyPage />,
+      },
     ],
   },
   {

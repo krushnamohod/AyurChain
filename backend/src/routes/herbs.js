@@ -4,6 +4,45 @@ const prisma = require("../lib/prismaClient");
 const router = express.Router();
 
 /**
+ * GET /api/herbs/search?q=ashwagandha
+ * Search herbs by name
+ */
+router.get("/search", async (req, res, next) => {
+    try {
+        const { q } = req.query;
+
+        if (!q || q.length < 2) {
+            return res.json([]);
+        }
+
+        const herbs = await prisma.herb.findMany({
+            where: {
+                OR: [
+                    { commonName: { contains: q, mode: "insensitive" } },
+                    { scientificName: { contains: q, mode: "insensitive" } },
+                ],
+            },
+            include: {
+                batches: {
+                    select: {
+                        id: true,
+                        status: true,
+                        blockchainTxId: true,
+                    },
+                    orderBy: { createdAt: "desc" },
+                    take: 5,
+                },
+            },
+            take: 10,
+        });
+
+        res.json(herbs);
+    } catch (error) {
+        next(error);
+    }
+});
+
+/**
  * GET /api/herbs
  * List all herbs
  */
@@ -11,6 +50,12 @@ router.get("/", async (req, res, next) => {
     try {
         const herbs = await prisma.herb.findMany({
             orderBy: { createdAt: "desc" },
+            include: {
+                batches: {
+                    select: { id: true, status: true },
+                    take: 1,
+                },
+            },
         });
         res.json(herbs);
     } catch (error) {
